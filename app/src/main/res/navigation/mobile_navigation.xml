@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/simpleFragment">
+    <fragment
+        android:id="@+id/simpleFragment"
+        android:name="kg.geektech.youtubeparsing.ui.simplePlaylist.SimplePlaylistFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/simple_playlist_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_detailedFragment"
+            app:destination="@id/playlistFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/playlistFragment"
+        android:name="kg.geektech.youtubeparsing.ui.detailedPlaylist.DetailedPlaylistFragment"
+        android:label="fragment_example"
+        tools:layout="@layout/detailed_playlist_fragment">
+
+        <action
+            android:id="@+id/actionFromPlaylistToLAst"
+            app:destination="@id/lastPageFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/lastPageFragment"
+        android:name="kg.geektech.youtubeparsing.ui.lastPage.LastPageFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/last_page_fragment">
+        <action
+            android:id="@+id/action_to_bottom_sheet"
+            app:destination="@id/bottomSheet" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/bottomSheet"
+        android:name="kg.geektech.youtubeparsing.ui.bottomSheetFragment.BottomSheetFragment"
+        android:label="fragment_example"
+        tools:layout="@layout/fragment_bottom_sheet">
+
+
+    </fragment>
+
+
+</navigation>
